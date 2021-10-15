@@ -1,0 +1,35 @@
+<table class="table table-bordered shadow-sm">
+    <thead>
+      <tr style="font-size: 13px;">
+        <th>N°</th>
+        <th>Nombre de producto</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Marca</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i < tasks.length; i++) { %>
+        <tr>
+          <td><%= i + 1%></td>
+          <td><strong><%= tasks[i].nombre %></strong></td>
+          <td><%= tasks[i].descripcion %></td>
+          <td><%= tasks[i].precio %></td>
+          <td><%= tasks[i].cantidad %></td>
+          <td><%= tasks[i].marca %></td>
+          <td>
+            <a href="/delete/<%= tasks[i]._id %>"
+              class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+            <a href="/edit/<%= tasks[i]._id %>" 
+              class="btn btn-info btn-sm">
+              <i class="fas fa-edit"></i>
+            </a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
